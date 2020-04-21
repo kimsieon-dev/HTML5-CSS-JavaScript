@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		list-style: none;
+	}	
+	
+	.container {
+		width: 1000px;
+		height: 800px;
+	}
+	
+	.container > .boxes {
+		width: 200px;
+		height: 200px;
+		line-height: 200px;
+		text-align: center;
+		display: block;
+		position: static; /* 기본값은 고정(static) */
+	}
+	
+	/* position 속성 : static(default), relative, absolute, fixed*/
+	
+	#box1 {
+		background: red;
+	}
+	
+	#box2 {
+		background: blue;
+		left: 50px;
+	}
+	
+	#box3 {
+		position: absolute;
+		background: green;
+		left: 500px;
+		top: 400px;
+		margin-left: -100px;
+		margin-top: -100px;
+	}
+	
+	.container > .boxes {
+		position: relative; /* 상대 위치를 사용 */
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div id="box1" class="boxes">box1</div>
+		<div id="box2" class="boxes">box2</div>
+		<div id="box3" class="boxes">box3</div>
+		
+	</div>
+</body>
+</html>

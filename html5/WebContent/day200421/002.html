@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Display 속성</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			list-style: none;
+		}	
+		
+		p {
+			display: block;
+			background: yellow;
+		}
+		
+		span {
+			display: block;
+			background: pink;
+		}
+		
+		strong, em {
+			background: #ffccff;
+		}
+		
+		body > div > div {
+			display: block;
+			width: 200px;
+			height: 200px;
+			border: 2px solid red;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		Lorem Ipsum is <span>simply dummy text</span> of the printing and typesetting industry. 
+		<strong>Lorem</strong> <em>Ipsum</em> has been the industry's standard dummy text ever since the 1500s, 
+		when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+		It has survived not only five centuries, but also the leap into electronic typesetting, 
+		remaining essentially unchanged
+	</p>
+	
+	<div>
+		<div id="box1">box1</div>
+		<div id="box2">box2</div>
+	</div>
+
+</body>
+</html>
