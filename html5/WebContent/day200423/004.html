@@ -22,6 +22,7 @@
 <body>
 	<div>
 		<button>버튼</button>
+		<input type="button" value="버튼2" />
 	</div>
 	
 	<div id="box">박스</div>
@@ -35,6 +36,14 @@
 				}else {
 					$("#box").addClass("design");
 				}
+			});
+			
+			// $("input:button")
+			$("input[type='button']").click(function(){
+				$(this).attr("type","text"); // attr : attribute 정적인 속성에 사용
+				$(this).removeAttr("value");
+				$(this).prop("placeholder","텍스트 입력"); // prop > property 동적인 속성에 사용
+				$(this).removeProp("value");
 			});
 		});
 	</script>
