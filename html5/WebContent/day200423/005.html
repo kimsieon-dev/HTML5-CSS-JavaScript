@@ -10,12 +10,24 @@
 			background: #77ffff;
 			padding: 50px;
 			margin: 100px;
+			border: 10px solid red;
 		}
 	</style>
 </head>
 <body>
 	<div></div>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
-
+	<script>
+		$(function(){
+			console.log($("div").width());           // content
+			console.log($("div").height());
+			console.log($("div").innerWidth());      // padding
+			console.log($("div").innerHeight());
+			console.log($("div").outerWidth());      // border
+			console.log($("div").outerHeight());
+			console.log($("div").outerWidth(true));  // margin
+			console.log($("div").outerHeight(true));
+		});
+	</script>
 </body>
 </html>
