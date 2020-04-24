@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div.out {
+		width: 200px;
+		height: 200px;
+		background: yellow;
+	}
+	
+	.inner {
+		width: 100px;
+		height: 100px;
+		background: pink;
+	}
+</style>
+</head>
+<body>
+	<div class="out">
+		<div class="inner">
+			마우스 이벤트
+		</div>
+	</div>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+	<script>
+		$(function(){
+			$(".out").mouseout(function(){
+				$(".inner").text("mouse out");
+			});	
+			
+			$(".out").mouseleave(function(){
+				$(".inner").text("mouse leave");
+			});	
+			
+			
+			$(".out").mouseenter(function(){
+				$(".inner").text("mouse enter");
+			});	
+			
+			$(".out").mousedown(function(){
+				$(".inner").text("mouse down");
+			});	
+			
+			$(".out").mouseup(function(){
+				$(".inner").text("mouse up");
+			});	
+		});
+	</script>
+</body>
+</html>
