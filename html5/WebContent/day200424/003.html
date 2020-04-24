@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.5.0.min.js"></script>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		list-style: none;
+	}
+	
+	.container {
+		width: 400px;
+		height: 300px;
+		border: 5px solid #333;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -200px;
+		margin-top: -150px;
+	}
+	
+	#userId, #userPw {
+		width: 200px;
+		height: 50px;
+		position: relative;
+		left: 50px;
+		top: 0;
+	}
+	
+	#userIdL, #userPwL {
+		position: relative;
+		display: inline-block;
+		width: 100px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		left: 50px;
+		top: 0;
+	}
+	
+	.container > div {
+		position: relative;
+		top: 20px;
+	}
+	
+	input[type="submit"] {
+		width: 300px;
+		height: 50px;
+		margin-left: 50px;
+		margin-top: 20px;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<form method="post" action="day200424.jsp">
+			<div>
+				<label id="userIdL" for="userId">아이디</label> 
+				<input type="text" id="userId" placeholder="id를 입력하세요." name="uId" autocomplete="off" required="required" />
+			</div>
+
+			<div>
+				<label id="userPwL" for="userPw">비밀번호</label> 
+				<input type="password" id="userPw" placeholder="비밀번호를 입력하세요." name="uPw" autocomplete="off" />
+			</div>
+
+			<div>
+				<input type="submit" value="로그인" />
+			</div>
+		</form>
+	</div>
+	
+	<script>
+		$(function(){
+			/* 
+				$("#userId").focus(function(){ 선택되는 경우
+					alert("아이디를 입력하세요");
+				});	
+			 */
+			 
+			$("#userPw").blur(function(){ // 선택이 해제되는 경우
+				alert("비밀번호를 입력하셨습니까?");
+			});
+			 
+			$("#userId").change(function(){ // value 속성 값이 변경되는 경우
+				$(this).css("background", "pink");
+			});	
+		});
+	</script>
+</body>
+</html>
