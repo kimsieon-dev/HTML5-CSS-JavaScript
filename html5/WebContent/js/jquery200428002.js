@@ -48,14 +48,17 @@ $(function(){
 		});
 	}
 	
-	$("button:first").hover(function(){
+	function move2() {
 		if($(".container").queue().length > 0) {
 			return false;
 		}
 		$(".container > div:last").prependTo(".container");
 		$(".container").css("left", "-640px");
 		$(".container").animate({"left" : 0}, 1000);
-		console.log($(".container").queue().length);
+	}
+	
+	$("button:first").hover(function(){
+		move2();
 		clearInterval(bannerAction);
 		bannerAction = setInterval(move, 3000);
 	});
@@ -67,4 +70,16 @@ $(function(){
 		bannerAction = setInterval(move, 3000);
 	});
 	
+	$("html, body").on("mousewheel DOMmouseScroll", function(e){
+		if(e.originalEvent.wheelDelta == 150 || e.originalEvent.detail == -3) {
+			move2();
+			clearInterval(bannerAction);
+			bannerAction = setInterval(move, 3000);
+		
+		}else if(e.originalEvent.wheelDelta == -150 || e.originalEvent.detail == 2) {
+			move();
+			clearInterval(bannerAction);
+			bannerAction = setInterval(move, 3000);
+		}
+	});
 });
